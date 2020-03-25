@@ -33,6 +33,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
+#include <set>
 
 #include "Open3D/Geometry/Image.h"
 #include "Open3D/Geometry/MeshBase.h"
@@ -133,6 +134,9 @@ public:
     /// needed.
     TriangleMesh &ComputeAdjacencyList();
 
+    /// \brief Function to find connected components with identical colors
+    TriangleMesh &IdenticallyColoredConnectedComponents();
+    
     /// \brief Function that removes duplicated verties, i.e., vertices that
     /// have identical coordinates.
     TriangleMesh &RemoveDuplicatedVertices();
@@ -724,6 +728,9 @@ public:
     /// The set adjacency_list[i] contains the indices of adjacent vertices of
     /// vertex i.
     std::vector<std::unordered_set<int>> adjacency_list_;
+
+    std::vector<std::set<int>> identically_colored_connected_components_list_;
+
     /// List of uv coordinates per triangle.
     std::vector<Eigen::Vector2d> triangle_uvs_;
     /// List of material ids.

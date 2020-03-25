@@ -83,6 +83,9 @@ void pybind_trianglemesh(py::module &m) {
                  &geometry::TriangleMesh::ComputeAdjacencyList,
                  "Function to compute adjacency list, call before adjacency "
                  "list is needed")
+            .def("identically_colored_connected_components",
+                 &geometry::TriangleMesh::IdenticallyColoredConnectedComponents,
+                 "Function to find connected components with identical colors")
             .def("remove_duplicated_vertices",
                  &geometry::TriangleMesh::RemoveDuplicatedVertices,
                  "Function that removes duplicated verties, i.e., vertices "
@@ -458,6 +461,11 @@ void pybind_trianglemesh(py::module &m) {
                     "adjacency_list", &geometry::TriangleMesh::adjacency_list_,
                     "List of Sets: The set ``adjacency_list[i]`` contains the "
                     "indices of adjacent vertices of vertex i.")
+            .def_readwrite(
+                    "identically_colored_connected_components_list",
+                    &geometry::TriangleMesh::identically_colored_connected_components_list_,
+                    "Set of Sets: The set ``identically_colored_connected_components_list[i]`` contains the "
+                    "indices of connected vertices with identical color.")
             .def_readwrite("triangle_uvs",
                            &geometry::TriangleMesh::triangle_uvs_,
                            "``float64`` array of shape ``(3 * num_triangles, "
@@ -469,6 +477,8 @@ void pybind_trianglemesh(py::module &m) {
                            "open3d.geometry.Image: The texture images.");
     docstring::ClassMethodDocInject(m, "TriangleMesh",
                                     "compute_adjacency_list");
+    docstring::ClassMethodDocInject(m, "TriangleMesh",
+                                    "identically_colored_connected_components");
     docstring::ClassMethodDocInject(m, "TriangleMesh",
                                     "compute_triangle_normals");
     docstring::ClassMethodDocInject(m, "TriangleMesh",

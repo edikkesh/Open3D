@@ -133,7 +133,7 @@ if (WIN32)
     # can't hide the unit testing option on Windows only
     # as a precaution: disable unit testing on Windows regardless of user input
     message(STATUS "Disable unit tests since this feature is not fully supported on Windows.")
-    set(BUILD_UNIT_TESTS OFF)
+    set(BUILD_UNIT_TESTS ON)
     add_definitions(-DWINDOWS)
     add_definitions(-D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_DEPRECATE -D_SCL_SECURE_NO_WARNINGS)		# suppress C4996 warning
     add_definitions(-DGLEW_STATIC)		# enable GLEW for windows

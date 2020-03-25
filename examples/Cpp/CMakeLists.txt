@@ -13,6 +13,7 @@ macro(EXAMPLE_CPP EXAMPLE_CPP_NAME)
 endmacro(EXAMPLE_CPP)
 
 EXAMPLE_CPP(CameraPoseTrajectory      ${CMAKE_PROJECT_NAME})
+EXAMPLE_CPP(solution                  ${CMAKE_PROJECT_NAME})
 EXAMPLE_CPP(ColorMapOptimization      ${CMAKE_PROJECT_NAME})
 EXAMPLE_CPP(DepthCapture              ${CMAKE_PROJECT_NAME})
 EXAMPLE_CPP(EvaluateFeatureMatch      ${CMAKE_PROJECT_NAME})

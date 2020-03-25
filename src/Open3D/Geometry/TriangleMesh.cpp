@@ -25,17 +25,20 @@
 // ----------------------------------------------------------------------------
 
 #include "Open3D/Geometry/TriangleMesh.h"
+
+#include <Eigen/Core>
+#include <numeric>
+#include <queue>
+#include <random>
+#include <tuple>
+
+#include <iostream>
+
 #include "Open3D/Geometry/BoundingVolume.h"
 #include "Open3D/Geometry/IntersectionTest.h"
 #include "Open3D/Geometry/KDTreeFlann.h"
 #include "Open3D/Geometry/PointCloud.h"
 #include "Open3D/Geometry/Qhull.h"
-
-#include <Eigen/Dense>
-#include <numeric>
-#include <queue>
-#include <random>
-#include <tuple>
 
 #ifdef _OPENMP
 #include <omp.h>
@@ -149,6 +152,45 @@ TriangleMesh &TriangleMesh::ComputeAdjacencyList() {
         adjacency_list_[triangle(2)].insert(triangle(0));
         adjacency_list_[triangle(2)].insert(triangle(1));
     }
+    return *this;
+}
+
+TriangleMesh &TriangleMesh::IdenticallyColoredConnectedComponents() {
+    if (!HasAdjacencyList()) {
+        ComputeAdjacencyList();
+    }
+
+    std::vector<bool> visited(vertices_.size(), false);
+
+    for (int vidx = 0; vidx < vertices_.size(); vidx++) {
+        if (visited[vidx]) continue;
+
+        std::set<int> identicallyColoredPatch;
+        identicallyColoredPatch.insert(vidx);
+        visited[vidx] = true;
+
+        Eigen::Vector3d color = vertex_colors_[vidx];
+        std::queue<int> queue;
+
+        queue.push(vidx);
+        while (!queue.empty()) {
+            int idx = queue.front();
+            queue.pop();
+
+            std::unordered_set<int> adjacents = adjacency_list_[idx];
+
+            for (auto nidx : adjacents) {
+                if (vertex_colors_[nidx] == color && !visited[nidx]) {
+                    identicallyColoredPatch.insert(nidx);
+                    visited[nidx] = true;
+                    queue.push(nidx);
+                }
+            }
+        }
+
+        identically_colored_connected_components_list_.push_back(identicallyColoredPatch);
+    }
+
     return *this;
 }
 
