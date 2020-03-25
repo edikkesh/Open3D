@@ -1,7 +1,7 @@
 This repository is a clone of the Open3D repository with extended functionality for finding connected components of a triangle mesh with identical colors.
 The original Open3D repository can be found here: https://github.com/intel-isl/Open3D
 
-Requirements for this enhancement are detailed in the requirement.pdf document.
+Requirements for this enhancement are detailed in the <b>requirement.pdf</b> document.
 
 ## Building the new Open3D
 	Please follow the build instructions given at the original Open3D site (above link).
