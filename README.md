@@ -8,7 +8,7 @@ Requirements for this enhancement are detailed in the <b>requirement.pdf</b> doc
 
 ## Testing the new functionality
 	The code was developed and tested on Windows.
-	One C++ sample program and one Python script are added to the esamples.
+	One C++ sample program and one Python script are added to the examples.
 	A test case is also added to the set of unit tests.
 	
 * The C++ example executable is located at Open3D\build\bin\examples\Debug.
