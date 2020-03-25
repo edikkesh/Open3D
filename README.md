@@ -1,24 +1,4 @@
-<p align="center">
-<img src="docs/_static/open3d_logo_horizontal.png" width="320" />
-</p>
-
-# Open3D: A Modern Library for 3D Data Processing
-
-<h4>
-    <a href="http://www.open3d.org">open3d.org</a> |
-    <a href="http://www.open3d.org/docs">Documentation</a> |
-    <a href="http://www.open3d.org/docs/release/getting_started.html">Quick Start</a> |
-    <a href="http://www.open3d.org/docs/release/compilation.html">Build from Source</a> |
-    <a href="http://www.open3d.org/docs/release/index.html#python-api-index">Python API</a> |
-    <a href="http://www.open3d.org/docs/release/cpp_api/index.html">C++ API</a> |
-    <a href="http://www.open3d.org/docs/release/contribute.html">Contribute</a> |
-    <a href="https://www.youtube.com/watch?v=I3UjXlA4IsU">Demo</a> |
-    <a href="https://forum.open3d.org">Forum</a>
-</h4>
-
-Open3D is an open-source library that supports rapid development of software that deals with 3D data. The Open3D frontend exposes a set of carefully selected data structures and algorithms in both C++ and Python. The backend is highly optimized and is set up for parallelization. We welcome contributions from the open-source community.
-
-A clone of the Open3D repository with extended functionality of finding connected components by color in triangle mesh.
+This repository is a clone of the Open3D repository with extended functionality for finding connected components of a triangle mesh with identical colors.
 The original Open3D repository can be found here: https://github.com/intel-isl/Open3D
 
 ## New or modified files
