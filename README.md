@@ -12,20 +12,20 @@ Requirements for this enhancement are detailed in the requirement.pdf document.
 * The C++ example executable is located at Open3D\build\bin\examples\Debug.
 	The program accepts the name of a mesh file as a parameter as follows:
 	
-		<b>solution test_mesh.ply</b>
+		solution test_mesh.ply
 		
 	The program writes a sorted list of sorted lists in a file named <b>results.txt</b>.
 		
 * The python example is located at Open3D\examples\Python\Basic. It can be run as follows:
 	
-		<b>python solution.py</b>
+		python solution.py
 		
 	The script writes a sorted list of sorted lists in a file named <b>results.txt</b>.
 		
 * The test is called ColoredTriangleMesh.IdenticallyColoredConnectedComponents.
 	The program <b>unitTests</b> is located at Open3D\build\bin\Debug. Run the test as follows:
 	
-		<b>unitTests --gtest_filter=ColoredTriangleMesh.IdenticallyColoredConnectedComponents</b>
+		unitTests --gtest_filter=ColoredTriangleMesh.IdenticallyColoredConnectedComponents
 
 ## New or modified files
 	CMakeLists.txt
