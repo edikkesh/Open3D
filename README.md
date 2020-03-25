@@ -24,7 +24,7 @@ Requirements for this enhancement are detailed in the <b>requirement.pdf</b> doc
 		
 	The script writes a sorted list of sorted lists in a file named <b>results.txt</b>.
 		
-* The test is called ColoredTriangleMesh.IdenticallyColoredConnectedComponents.
+* The test is called <b>ColoredTriangleMesh.IdenticallyColoredConnectedComponents</b>.
 	The program <b>unitTests</b> is located at Open3D\build\bin\Debug. Run the test as follows:
 	
 		unitTests --gtest_filter=ColoredTriangleMesh.IdenticallyColoredConnectedComponents
