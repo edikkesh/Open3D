@@ -8,6 +8,16 @@ Requirements for this enhancement are detailed in the requirement.pdf document.
 
 ## Testing the new functionality
 	The code is tested on Windows.
+	
+	The C++ executable is located at Open3D\build\bin\examples\Debug. It accept the name of a mesh file as a parameter: 
+		solution test_mesh.ply
+		
+	The python example is located at Open3D\examples\Python\Basic. It can be run as follows:
+		python solution.py
+		
+	The test is called ColoredTriangleMesh.IdenticallyColoredConnectedComponents.
+	The program unitTests is located at Open3D\build\bin\Debug. Run the test as follows:
+		unitTests --gtest_filter=ColoredTriangleMesh.IdenticallyColoredConnectedComponents
 
 ## New or modified files
 	CMakeLists.txt
