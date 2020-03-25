@@ -18,6 +18,8 @@
 
 Open3D is an open-source library that supports rapid development of software that deals with 3D data. The Open3D frontend exposes a set of carefully selected data structures and algorithms in both C++ and Python. The backend is highly optimized and is set up for parallelization. We welcome contributions from the open-source community.
 
+A clone of the Open3D repository with extended functionality of finding connected components by color in triangle mesh
+
 ## New or modified files
 	CMakeLists.txt
 	examples/Cpp/CMakeLists.txt
