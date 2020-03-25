@@ -92,5 +92,5 @@ The choice for the signuture of the funtion also follows the pattern used with s
 
 ## Notes
 * Our C++ implementaion generates a sorted list of sorted lists (std::vector< std::set<int> >). However, when the data is accessed in our Python example (solution.py), the individual member lists are no longer sorted. As a remedy, we sort the individual lists inside the Python script before writing them to the output file.
-	* In Visual Studio, the option <b>/biobj</b> should be added as a command line option for project <b>Geometry</b>.
-	* In Visual Studio, the library <b>pthread.lib</b> should be removed from the link libraries list for the <b>unitTests</b> project
+* In Visual Studio, the option <b>/biobj</b> should be added as a command line option for project <b>Geometry</b>.
+* In Visual Studio, the library <b>pthread.lib</b> should be removed from the link libraries list for the <b>unitTests</b> project
