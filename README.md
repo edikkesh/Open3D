@@ -21,14 +21,14 @@ Open3D is an open-source library that supports rapid development of software tha
 ## New or modified files
 	CMakeLists.txt
 	examples/Cpp/CMakeLists.txt
-	examples/Cpp/solution.cpp
-	examples/Python/Basic/solution.py
-	examples/TestData/results.txt
-	examples/TestData/test_mesh.ply
+	examples/Cpp/solution.cpp (new)
+	examples/Python/Basic/solution.py (new)
+	examples/TestData/results.txt (new)
+	examples/TestData/test_mesh.ply (new)
 	src/Open3D/Geometry/TriangleMesh.cpp
 	src/Open3D/Geometry/TriangleMesh.h
 	src/Python/open3d_pybind/geometry/trianglemesh.cpp
-	src/UnitTest/Geometry/ColoredTriangleMesh.cpp
+	src/UnitTest/Geometry/ColoredTriangleMesh.cpp (new)
 
 ## Core features
 
