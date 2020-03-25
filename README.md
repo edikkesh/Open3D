@@ -41,7 +41,13 @@ Requirements for this enhancement are detailed in the <b>requirement.pdf</b> doc
 	
 ## Algorithm design
 
-The algorithm is implemented as a method of the class <b>TriangleMesh</b>. The code is duplicated below.
+The algorithm is implemented as a method of the class <b>TriangleMesh</b>. Since the algorithm is fairly straightforward we only present the C++ code and not the psuedo code.
+
+The core idea is to iterate through all the vertices of the mesh and for each vertex find the adjacent vertices and retain the ones that have the same color as the vertex. This is done recursively until a complete set of identically-colored and connected vertices is identified. An identified set is stored in a data member representing a set of sets. The choice for the type of the data member follows the pattern used in the Open3D design. The member declaration is as follows:
+
+	std::vector<std::set<int>> identically_colored_connected_components_list_;
+	
+As can be seen from the code below, our implementation uses two nested loops to simulate recursion. 
 
 	TriangleMesh &TriangleMesh::IdenticallyColoredConnectedComponents() {
 	    if (!HasAdjacencyList()) {
