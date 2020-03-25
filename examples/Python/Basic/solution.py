@@ -23,8 +23,9 @@ if __name__ == "__main__":
     outfile = open("results.txt", "w")
 
     for connComp in connected_components:
-        for comp in connComp:
+        orderedSet = sorted(connComp)
+        for comp in orderedSet:
             outfile.write('%d '%comp)
-        outfile.write('\r\n')
+        outfile.write('\n')
 
     outfile.close()
