@@ -41,15 +41,12 @@ Requirements for this enhancement are detailed in the <b>requirement.pdf</b> doc
 	
 ## Algorithm design
 
-The algorithm is implemented as a method of the class <b>TriangleMesh</b> with the following signature:
+The algorithm is implemented as a method of the class <b>TriangleMesh</b>. The code is duplicated below.
 
-	TriangleMesh &TriangleMesh::IdenticallyColoredConnectedComponents()
-	
-
-	    TriangleMesh &TriangleMesh::IdenticallyColoredConnectedComponents() {
-		if (!HasAdjacencyList()) {
-		    ComputeAdjacencyList();
-		}
+	TriangleMesh &TriangleMesh::IdenticallyColoredConnectedComponents() {
+	    if (!HasAdjacencyList()) {
+		ComputeAdjacencyList();
+	    }
     
 	    std::vector<bool> visited(vertices_.size(), false);
 
