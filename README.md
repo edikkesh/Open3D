@@ -10,7 +10,7 @@ Requirements for this enhancement are detailed in the requirement.pdf document.
 	The code is tested on Windows.
 	
 * The C++ example executable is located at Open3D\build\bin\examples\Debug.
-	The program accept the name of a mesh file as a parameter:
+	The program accepts the name of a mesh file as a parameter:
 	
 		solution test_mesh.ply
 		
