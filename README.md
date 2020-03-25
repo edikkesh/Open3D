@@ -43,7 +43,7 @@ Requirements for this enhancement are detailed in the <b>requirement.pdf</b> doc
 
 The algorithm is implemented as a method of the class <b>TriangleMesh</b>. Since the algorithm is fairly straightforward we only present the C++ code and not the psuedo code.
 
-The core idea is to iterate through all the vertices of the mesh and for each vertex find the adjacent vertices and retain the ones that have the same color as the vertex. This is done recursively until a complete set of identically-colored and connected vertices is identified. An identified set is stored in a data member representing a set of sets. The choice for the type of the data member follows the pattern used in the Open3D design. The member declaration is as follows:
+The core idea is to iterate through all the vertices of the mesh and for each vertex find the adjacent vertices and retain the ones that have the same color as the vertex. This is done recursively until a complete set of identically-colored and connected vertices is identified. An identified set is stored in a data member representing a set of sets. The choice for the type of the data member follows the pattern used in the Open3D design. The data member declaration is as follows:
 
 	std::vector<std::set<int>> identically_colored_connected_components_list_;
 	
@@ -89,29 +89,5 @@ As can be seen from the code below, our implementation uses two nested loops to 
 	}
 
 
-## Core features
 
-* 3D data structures
-* 3D data processing algorithms
-* Scene reconstruction
-* Surface alignment
-* 3D visualization
-* Python binding
 
-## Supported OSes and compilers
-
-* Ubuntu 16.04 or newer: GCC 5.x or newer [![Build Status](https://travis-ci.org/intel-isl/Open3D.svg?branch=master)](https://travis-ci.org/intel-isl/Open3D)
-* macOS: XCode 8.0 or newer [![Build Status](https://travis-ci.org/intel-isl/Open3D.svg?branch=master)](https://travis-ci.org/intel-isl/Open3D)
-* Windows: Visual Studio 2017 or newer [![Build status](https://ci.appveyor.com/api/projects/status/3hasjo041lv6srsi/branch/master?svg=true)](https://ci.appveyor.com/project/yxlao/open3d/branch/master)
-
-## Citation
-Please cite [our work](https://arxiv.org/abs/1801.09847) if you use Open3D.
-
-```
-@article{Zhou2018,
-	author    = {Qian-Yi Zhou and Jaesik Park and Vladlen Koltun},
-	title     = {{Open3D}: {A} Modern Library for {3D} Data Processing},
-	journal   = {arXiv:1801.09847},
-	year      = {2018},
-}
-```
