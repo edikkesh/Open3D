@@ -46,44 +46,44 @@ The algorithm is implemented as a method of the class <b>TriangleMesh</b> with t
 	TriangleMesh &TriangleMesh::IdenticallyColoredConnectedComponents()
 	
 
-TriangleMesh &TriangleMesh::IdenticallyColoredConnectedComponents() {
-    if (!HasAdjacencyList()) {
-        ComputeAdjacencyList();
-    }
+	    TriangleMesh &TriangleMesh::IdenticallyColoredConnectedComponents() {
+		if (!HasAdjacencyList()) {
+		    ComputeAdjacencyList();
+		}
+    
+	    std::vector<bool> visited(vertices_.size(), false);
 
-    std::vector<bool> visited(vertices_.size(), false);
+	    for (int vidx = 0; vidx < vertices_.size(); vidx++) {
+		if (visited[vidx]) continue;
 
-    for (int vidx = 0; vidx < vertices_.size(); vidx++) {
-        if (visited[vidx]) continue;
+		std::set<int> identicallyColoredPatch;
+		identicallyColoredPatch.insert(vidx);
+		visited[vidx] = true;
 
-        std::set<int> identicallyColoredPatch;
-        identicallyColoredPatch.insert(vidx);
-        visited[vidx] = true;
+		Eigen::Vector3d color = vertex_colors_[vidx];
+		std::queue<int> queue;
 
-        Eigen::Vector3d color = vertex_colors_[vidx];
-        std::queue<int> queue;
+		queue.push(vidx);
+		while (!queue.empty()) {
+		    int idx = queue.front();
+		    queue.pop();
 
-        queue.push(vidx);
-        while (!queue.empty()) {
-            int idx = queue.front();
-            queue.pop();
+		    std::unordered_set<int> adjacents = adjacency_list_[idx];
 
-            std::unordered_set<int> adjacents = adjacency_list_[idx];
+		    for (auto nidx : adjacents) {
+			if (vertex_colors_[nidx] == color && !visited[nidx]) {
+			    identicallyColoredPatch.insert(nidx);
+			    visited[nidx] = true;
+			    queue.push(nidx);
+			}
+		    }
+		}
 
-            for (auto nidx : adjacents) {
-                if (vertex_colors_[nidx] == color && !visited[nidx]) {
-                    identicallyColoredPatch.insert(nidx);
-                    visited[nidx] = true;
-                    queue.push(nidx);
-                }
-            }
-        }
+		identically_colored_connected_components_list_.push_back(identicallyColoredPatch);
+	    }
 
-        identically_colored_connected_components_list_.push_back(identicallyColoredPatch);
-    }
-
-    return *this;
-}
+	    return *this;
+	}
 
 
 ## Core features
