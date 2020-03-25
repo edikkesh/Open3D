@@ -1,22 +1,21 @@
-<p align="center">
-<img src="docs/_static/open3d_logo_horizontal.png" width="320" />
-</p>
+This repository is a clone of the Open3D repository with extended functionality for finding connected components of a triangle mesh with identical colors.
+The original Open3D repository can be found here: https://github.com/intel-isl/Open3D
 
-# Open3D: A Modern Library for 3D Data Processing
+# Requirements
+	Implement a function to return a list of identically-colored connected  components. An identically-colored connected component is a connected  component where each vertex in the component has the same color. In this  question, a connected component is represented by a list of vertex indices.    Example triangle mesh 
+  A triangle mesh is represented by vertices and triangles.    In this example, there are 7 vertices:  [0, 1, 2, 3, 4, 5, 6]    There are 6 triangles:  [(0, 2, 3), (0, 3, 1), (1, 3, 4), (2, 5, 3), (3, 5, 6), (3, 6, 4)]    Each vertex has a color:  [red, red, blue, blue, green, red, red]    Given this mesh, the expected output of IdenticallyColoredConnectedComponents  is:  [[0, 1], [2, 3], [4], [5, 6]]  where the order of the lists are sorted ascendingly by the smallest element in  each list; and within each list, the vertices are sorted ascendingly by their  indices.    We then write the results into "​ results.txt"​ , where each line in the text file  represents one connected component. In each line, vertex indices are separated  by space:  ```  0 1  2 3  4  5 6  ```  
 
-<h4>
-    <a href="http://www.open3d.org">open3d.org</a> |
-    <a href="http://www.open3d.org/docs">Documentation</a> |
-    <a href="http://www.open3d.org/docs/release/getting_started.html">Quick Start</a> |
-    <a href="http://www.open3d.org/docs/release/compilation.html">Build from Source</a> |
-    <a href="http://www.open3d.org/docs/release/index.html#python-api-index">Python API</a> |
-    <a href="http://www.open3d.org/docs/release/cpp_api/index.html">C++ API</a> |
-    <a href="http://www.open3d.org/docs/release/contribute.html">Contribute</a> |
-    <a href="https://www.youtube.com/watch?v=I3UjXlA4IsU">Demo</a> |
-    <a href="https://forum.open3d.org">Forum</a>
-</h4>
-
-Open3D is an open-source library that supports rapid development of software that deals with 3D data. The Open3D frontend exposes a set of carefully selected data structures and algorithms in both C++ and Python. The backend is highly optimized and is set up for parallelization. We welcome contributions from the open-source community.
+## New or modified files
+	CMakeLists.txt
+	examples/Cpp/CMakeLists.txt
+	examples/Cpp/solution.cpp (new)
+	examples/Python/Basic/solution.py (new)
+	examples/TestData/results.txt (new)
+	examples/TestData/test_mesh.ply (new)
+	src/Open3D/Geometry/TriangleMesh.cpp
+	src/Open3D/Geometry/TriangleMesh.h
+	src/Python/open3d_pybind/geometry/trianglemesh.cpp
+	src/UnitTest/Geometry/ColoredTriangleMesh.cpp (new)
 
 ## Core features
 
