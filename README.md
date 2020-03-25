@@ -7,7 +7,7 @@ Requirements for this enhancement are detailed in the <b>requirement.pdf</b> doc
 	Please follow the build instructions given at the original Open3D site (above link).
 
 ## Testing the new functionality
-	The code is tested on Windows.
+	The code is tested on Windows. One C++ sample program and one Python script are added to the esample. A test case is also added to the set of unit tests.
 	
 * The C++ example executable is located at Open3D\build\bin\examples\Debug.
 	The program accepts the name of a mesh file as a parameter as follows:
@@ -47,7 +47,7 @@ The core idea is to iterate through all the vertices of the mesh and for each ve
 
 	std::vector<std::set<int>> identically_colored_connected_components_list_;
 	
-As can be seen from the code below, our implementation uses two nested loops to simulate recursion. 
+The choice for the signuture of the funtion also follows the pattern used with similar functions in Open3D. As can be seen from the code below, our implementation uses two nested loops to simulate recursion. 
 
 	TriangleMesh &TriangleMesh::IdenticallyColoredConnectedComponents() {
 	    if (!HasAdjacencyList()) {
@@ -87,7 +87,5 @@ As can be seen from the code below, our implementation uses two nested loops to 
 
 	    return *this;
 	}
-
-
 
 
