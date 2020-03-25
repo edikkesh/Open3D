@@ -7,7 +7,8 @@ Requirements for this enhancement are detailed in the <b>requirement.pdf</b> doc
 	Please follow the build instructions given at the original Open3D site (above link).
 
 ## Testing the new functionality
-	The code is tested on Windows. One C++ sample program and one Python script are added to the esample. A test case is also added to the set of unit tests.
+	The code is tested on Windows. One C++ sample program and one Python script are added to the esample.
+	A test case is also added to the set of unit tests.
 	
 * The C++ example executable is located at Open3D\build\bin\examples\Debug.
 	The program accepts the name of a mesh file as a parameter as follows:
