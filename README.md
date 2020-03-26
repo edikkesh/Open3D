@@ -29,7 +29,7 @@ Requirements for this enhancement are detailed in the <b>requirement.pdf</b> doc
 	
 		unitTests --gtest_filter=ColoredTriangleMesh.IdenticallyColoredConnectedComponents
 
-## New or modified files
+## New and modified files
 	CMakeLists.txt
 	examples/Cpp/CMakeLists.txt
 	examples/Cpp/solution.cpp (new)
