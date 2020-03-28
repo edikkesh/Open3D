@@ -4,7 +4,7 @@ The original Open3D repository can be found here: https://github.com/intel-isl/O
 Requirements for this enhancement are detailed in the <b>requirement.pdf</b> document.
 
 ## Building the new Open3D
-	Please follow the build instructions given at the original Open3D site (above link).
+	Please follow the build instructions given at the original Open3D site (above link), using the URL for this repository instead of the original. 
 
 ## Testing the new functionality
 	The code was developed and tested on Windows.
