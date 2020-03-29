@@ -4,7 +4,7 @@ The original Open3D repository can be found here: https://github.com/intel-isl/O
 Requirements for this enhancement are detailed in the <b>requirement.pdf</b> document.
 
 ## Building the new Open3D
-	Please follow the build instructions given at the original Open3D site (above link).
+	Please follow the build instructions given at the original Open3D site (above link). 
 
 ## Testing the new functionality
 	The code was developed and tested on Windows.
@@ -29,7 +29,7 @@ Requirements for this enhancement are detailed in the <b>requirement.pdf</b> doc
 	
 		unitTests --gtest_filter=ColoredTriangleMesh.IdenticallyColoredConnectedComponents
 
-## New or modified files
+## New and modified files
 	CMakeLists.txt
 	examples/Cpp/CMakeLists.txt
 	examples/Cpp/solution.cpp (new)
@@ -90,4 +90,9 @@ The choice for the signuture of the funtion also follows the pattern used with s
 	    return *this;
 	}
 
+## Notes
+* Our C++ implementaion generates a sorted list of sorted lists (std::vector< std::set<int> >). However, when the data is accessed in our Python example (solution.py), the individual member lists are no longer sorted. As a remedy, we sort the individual lists inside the Python script before writing them to the output file.
+	
+* In Visual Studio, the option <b>/biobj</b> should be added as a command line option for project <b>Geometry</b>.
 
+* In Visual Studio, the library <b>pthread.lib</b> should be removed from the link libraries list for project <b>unitTests</b>.
